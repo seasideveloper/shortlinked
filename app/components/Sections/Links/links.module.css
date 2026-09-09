@@ -1,0 +1,150 @@
+.links_section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em 0;
+    border-top: 1px solid rgba(128, 128, 128, 0.132);
+}
+
+.try_now {
+  color: rgb(196, 155, 206);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.heading {
+    font-size: 2.3rem;
+    margin: 0.3em 0;
+}
+
+.form_container {
+    padding: 2em 1.5em;
+    width: 70%;
+    max-width: 850px;
+    min-width: 700px;
+    background-color: #112E5B;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 1em;
+    border-radius: 15px;
+    margin: 1em;
+}
+
+.shorten_link {
+    width: 100%;
+    padding: 1em;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+}
+
+.shorten_link_btn {
+    width: 100%;
+    padding: 1em;
+    font-size: 1rem;
+    font-weight: 700;
+    color: white;
+    background-color:rgb(196, 155, 206);
+    border: none;
+    border-radius: 8px;
+}
+
+.shorten_link_btn:hover {
+  background-color: rgb(200, 173, 207);
+  cursor: pointer;
+  transform: scale(1.05);
+  transition: all 0.2s linear;
+}
+
+.shortened_link_container {
+    padding: 1.5em;
+    width: 70%;
+    max-width: 850px;
+    min-width: 700px;
+    background-color: white;
+
+    border-radius: 15px;
+    margin: 1em;
+
+    border: 2px solid #112E5B;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)
+}
+
+.original_url {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: rgb(126, 126, 126);
+
+    margin-bottom: 1em;
+}
+
+.shortLink {
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: rgb(196, 155, 206);
+}
+
+.shortLink:hover {
+    color: #112E5B;
+    text-decoration: underline;
+    transition: all 0.2s linear;
+}
+
+.link_section {
+    width: 60%;
+}
+
+.short_links_container {
+    display: flex;
+    gap: 1em;
+    justify-content: space-between;
+    align-items: center;
+  
+}
+
+.short_url_container {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.qr_container{
+    display: flex;
+    gap: 1em;
+}
+
+.buttons_container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.copy_btn {
+    width: 100%;
+    padding: 0.3em 1em;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: white;
+    background-color:rgb(196, 155, 206);
+    border: none;
+    border-radius: 8px;
+}
+
+.copy_btn:hover {
+    background-color: rgb(200, 173, 207);
+    cursor: pointer;
+}
+
+.copy_btn_active {
+    width: 100%;
+    padding: 0.4em 1.2em;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: white;
+    background-color: #112E5B;
+    border: none;
+    border-radius: 8px;
+}
