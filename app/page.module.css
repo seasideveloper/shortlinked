@@ -1,8 +1,9 @@
 
 .main {
-  margin: 4em auto;
+  width: 100%;
   max-width: 1450px;
-  width: 80%;
+  margin: 0 auto;
+  overflow: hidden;
 }
 
 .wave_container {
