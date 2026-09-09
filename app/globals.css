@@ -22,7 +22,6 @@ body {
 
 body {
   min-height: 100%;
-  overflow-x: hidden;
 
   color: var(--foreground);
   background: var(--background);
@@ -45,16 +44,5 @@ a {
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    scroll-behavior: auto !important;
-    transition-duration: 0.01ms !important;
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
   }
 }
