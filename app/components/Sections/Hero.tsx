@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import styles from './hero.module.css'
-import hero_img from '@/public/man.svg'
+import hero_img from '@/public/hero_man.svg'
 
 export default function Hero() {
 
