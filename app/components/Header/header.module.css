@@ -87,6 +87,7 @@
   justify-content: flex-end;
   align-items: center;
   gap: 2em;
+  min-width: 300px
 }
 
 .login_btn {
@@ -204,12 +205,27 @@
 }
 
 /* ─── Responsive ──────────────────────────────────────────────────────────── */
+
+@media (max-width: 1000px) { 
+  .nav {
+    display: none;
+  }
+
+    .hamburger {
+    display: flex;
+  }
+
+  .mobile_menu {
+    display: flex;
+  }
+}
 @media (max-width: 768px) {
   .inner {
     grid-template-columns: 1fr auto;
   }
 
-  .nav {
+  .nav,
+  .auth_btns_container {
     display: none;
   }
 

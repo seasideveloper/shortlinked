@@ -17,7 +17,7 @@
     margin: 0.3em 0;
 }
 
-.form_container {
+/* .form_container {
     padding: 2em 1.5em;
     width: 70%;
     max-width: 850px;
@@ -28,6 +28,17 @@
     gap: 1em;
     border-radius: 15px;
     margin: 1em;
+} */
+
+.form_container {
+    display: grid;
+    grid-template-columns: minmax(0, 3fr) minmax(9rem, 1fr);
+    gap: clamp(0.75rem, 2vw, 1rem);
+    width: min(100%, 800px);
+    padding: clamp(1rem, 3vw, 2rem) clamp(1rem, 3vw, 1.5rem);
+    margin: 1rem 0;
+    background-color: #112E5B;
+    border-radius: 15px;
 }
 
 .shorten_link {
@@ -57,8 +68,8 @@
   transition: all 0.2s linear;
 }
 
-.shortened_link_container {
-    padding: 1.5em;
+/* .shortened_link_container {
+    padding: 1.5em 2em;
     width: 70%;
     max-width: 850px;
     min-width: 700px;
@@ -69,6 +80,16 @@
 
     border: 2px solid #112E5B;
     box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)
+} */
+
+.shortened_link_container {
+    width: min(100%, 800px);
+    padding: clamp(1rem, 3vw, 1.5rem);
+    margin: 1rem 0;
+    background-color: white;
+    border: 2px solid #112E5B;
+    border-radius: 15px;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 }
 
 .original_url {
@@ -78,12 +99,22 @@
     white-space: nowrap;
     color: rgb(126, 126, 126);
 
-    margin-bottom: 1em;
+    margin-bottom: 1.5em;
+}
+
+.your_short_link_container {
+    display: flex;
+    align-items: center;
+}
+
+.link_icon {
+    transform: rotate(-45deg);
+    margin-right: 5px;
 }
 
 .shortLink {
     font-weight: 700;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     color: rgb(196, 155, 206);
 }
 
@@ -94,7 +125,8 @@
 }
 
 .link_section {
-    width: 60%;
+    width: 70%;
+
 }
 
 .short_links_container {
@@ -102,12 +134,12 @@
     gap: 1em;
     justify-content: space-between;
     align-items: center;
-  
 }
 
 .short_url_container {
     display: flex;
     align-items: center;
+    justify-content: flex-start;
     gap: 1em;
 }
 
@@ -120,31 +152,128 @@
     display: flex;
     flex-direction: column;
     gap: 0.5em;
+    justify-content: space-around;
 }
 
 .copy_btn {
-    width: 100%;
-    padding: 0.3em 1em;
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: white;
-    background-color:rgb(196, 155, 206);
     border: none;
+    color: white;
+    padding: 0.7em 1.5em;
     border-radius: 8px;
+    background-color: rgb(196, 155, 206);
+    font-size: 1rem;
+    font-weight: 700;
 }
 
 .copy_btn:hover {
-    background-color: rgb(200, 173, 207);
+  background-color: rgb(200, 173, 207);
+  cursor: pointer;
+}
+
+.copy_btn_icon,
+.copy_btn_active_icon {
+    border: none;
+    background: none;
+}
+
+.copy_btn_icon:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.copy_btn_active_icon:hover {
     cursor: pointer;
 }
 
-.copy_btn_active {
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.copied {
+    color: #112E5B;
+    animation: fadeIn 0.2s ease-in-out;
+    font-weight: 600;
+}
+
+
+@media (max-width: 850px) {
+  .links_section {
+    padding-inline: 1rem;
+ 
+  }
+
+  .link_section {
     width: 100%;
-    padding: 0.4em 1.2em;
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: white;
-    background-color: #112E5B;
-    border: none;
-    border-radius: 8px;
+    
+  }
+ 
+  .heading {
+    font-size: clamp(1.8rem, 8vw, 2.3rem);
+    text-align: center;
+  }
+
+  .links_section > p:not(.try_now) {
+    text-align: center;
+    line-height: 1.5;
+  } 
+
+  .form_container {
+    grid-template-columns: 1fr;
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .shorten_link,
+  .shorten_link_btn,
+  .copy_btn,
+  .copy_btn_active {
+    min-height: 44px;
+  }
+
+
+  .short_links_container {
+    flex-direction: column;
+    align-items: center;
+
+  }
+
+
+  .short_url_container {
+ 
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .shortLink {
+    min-width: 0;
+    overflow-wrap: anywhere;
+    font-size: clamp(1.05rem, 5vw, 1.4rem);
+  }
+  
+
+  .qr_container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .copied {
+    display: none;
+  }
+
+.buttons_container {
+    flex-direction: column;
+     width: 100%;
+
+  }
+  
+  .buttons_container .copy_btn {
+    width: 100%;
+  } 
 }

@@ -5,6 +5,10 @@ import { useState, useRef } from 'react';
 import { shortenUrlAction } from '../../../actions/shorten'
 import Image from 'next/image';
 
+import link_icon from '../../../../public/link_icon.svg'
+import copy from '../../../../public/copy.svg';
+import copied from '../../../../public/copied.svg'
+
 
 export default function Links() {
 
@@ -129,28 +133,43 @@ function handleCopy(index: any) {
 
         <div className={styles.link_section}>
             <p className={styles.original_url}>{link.original}</p>
-            <p>YOUR SHORT LINK:</p>
+
+
+            <div className={styles.your_short_link_container}>
+                <Image src={link_icon} height={25} width={25} alt='link icon' className={styles.link_icon}/>
+                <p style={{color: '#112E5B', fontWeight: '600'}}>YOUR SHORT LINK:</p>
+            </div>
             <div className={styles.short_url_container}>
             <a href={shortUrl} className={styles.shortLink} target="_blank" rel="noopener noreferrer">
                 {link.short}
             </a>
-            <button className={id === index ? `${styles.copy_btn_active} ` : `${styles.copy_btn}`}
+            {/* <button className={id === index ? `${styles.copy_btn_active} ` : `${styles.copy_btn}`}
                 onClick={()=> {
                 navigator.clipboard.writeText(link.short); 
                 handleCopy(index); 
                 }}>
-                {id === index ? 'Copied!' : 'Copy'}</button>
+                {id === index ? 'Copied!' : 'Copy'}</button> */}
+            <button className={id === index ? `${styles.copy_btn_active_icon} ` : `${styles.copy_btn_icon}`}
+                onClick={()=> {
+                navigator.clipboard.writeText(link.short); 
+                handleCopy(index); 
+                }}>
+                    <Image src={id === index ? copied : copy} width={30} height={30} alt='copy icon' title='copy'/>
+            </button>
+
+            {id === index && 
+                <p className={styles.copied}>Copied ✓</p>}
             </div>
         </div>
 
 
           {qrCode && (
             <div className={styles.qr_container}>
-         <Image src={qrCode} alt="Generated QR Code" width={99} 
-          height={99} />
+         <Image src={qrCode} alt="Generated QR Code" width={100} 
+          height={100} />
           <div className={styles.buttons_container}>
-            <button onClick={downloadAsPNG} className={styles.copy_btn}>PNG</button>
-            <button onClick={downloadAsSVG} className={styles.copy_btn}>SVG</button>
+            <button onClick={downloadAsPNG} className={styles.copy_btn} title='download png'>PNG</button>
+            <button onClick={downloadAsSVG} className={styles.copy_btn} title='download svg'>SVG</button>
           </div>
           </div>
           )}

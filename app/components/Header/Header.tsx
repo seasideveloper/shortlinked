@@ -147,6 +147,13 @@ export default function Header() {
             <Link href="/about" className={styles.mobile_link} onClick={closeMenu}>About</Link>
             <Link href="/contact" className={styles.mobile_link} onClick={closeMenu}>Contact Us</Link>
           </nav>
+          <button className={styles.login_btn}>
+            Login
+          </button>
+
+          <button className={styles.signup_btn}>
+            Start Free
+          </button>
           <button
             className={styles.mobile_theme_toggle}
             onClick={toggleTheme}
