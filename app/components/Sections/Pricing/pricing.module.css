@@ -1,0 +1,104 @@
+.section {
+    padding:clamp(4rem,10vw,8rem) 0;
+    background:#f4f8fd;
+    margin-left:calc((80vw - 100vw)/2);
+    margin-right:calc((80vw - 100vw)/2);
+    padding-left:max(10vw,calc((100vw - 1450px)/2));
+    padding-right:max(10vw,calc((100vw - 1450px)/2))
+}
+
+.heading {
+    text-align:center
+}
+
+.eyebrow {
+    color:#1769d4;
+    font-size:.75rem;
+    font-weight:700;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    margin-bottom:1rem
+}
+
+.heading h2 {
+    font-size:clamp(2rem,4vw,3.2rem);
+    letter-spacing:-.055em;
+    line-height:1.1
+}
+
+.heading>p:last-child {
+    color:#526174;
+    margin-top:1rem
+}
+
+.toggle {
+    display:flex;
+    justify-content:center;
+    gap:.25rem;
+    background:#fff;
+    border:1px solid #d9e3ee;
+    border-radius:999px;
+    padding:.25rem;
+    width:max-content;
+    margin:2rem auto
+}
+
+.toggle button {
+    border:0;
+    background:transparent;
+    border-radius:999px;
+    padding:.65rem 1rem;
+    color:#526174;
+    font:inherit;
+    font-size:.85rem;
+    cursor:pointer
+}
+
+.toggle .active {
+    background:#1769d4;
+    color:#fff
+} 
+
+.toggle span { 
+    font-size:.7rem;
+    background:#b9f3d8;
+    color:#087c55;
+    padding:.2rem .4rem;
+    border-radius:999px;
+    margin-left:.25rem
+}
+
+.cards {
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:1rem;
+    margin-top:2rem
+}
+
+.card {position:relative;background:#fff;border:1px solid #d9e3ee;border-radius:1rem;padding:2rem;min-height:370px}
+
+.popular{border:2px solid #1769d4}
+
+.badge{position:absolute;top:-.75rem;right:1.25rem;background:#1769d4;color:#fff;border-radius:999px;padding:.35rem .7rem;font-size:.7rem;font-weight:700}
+
+.card h3{font-size:1.3rem}.planDescription{color:#526174;font-size:.9rem;margin-top:.5rem}
+
+.price{font-size:2.5rem;font-weight:800;letter-spacing:-.05em;margin:1.5rem 0}
+
+.price small{font-size:.8rem;color:#526174;font-weight:400;letter-spacing:0}
+
+.cta{display:block;text-align:center;background:#1769d4;color:#fff;border-radius:.5rem;padding:.8rem;font-weight:700;font-size:.85rem}
+
+.card:not(.popular) 
+
+.cta{background:#e8f1fc;color:#075dcc}
+
+.card ul{list-style:none;display:grid;gap:.7rem;margin-top:1.5rem;padding:0;color:#526174;font-size:.85rem}
+
+.card li span{color:#11b981;font-weight:800;margin-right:.55rem}
+
+@media(max-width:800px){
+    .section{margin-left:-12.5%;margin-right:-12.5%;padding-left:12.5%;padding-right:12.5%}
+    
+    .cards{grid-template-columns:1fr}.card{min-height:auto}
+}

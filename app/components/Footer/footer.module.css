@@ -1,0 +1,84 @@
+.footer {
+  background: #102445;
+  color: #fff;
+  margin-left: calc((80vw - 100vw) / 2);
+  margin-right: calc((80vw - 100vw) / 2);
+  padding: 4rem max(10vw, calc((100vw - 1450px) / 2)) 1.5rem;
+}
+.top {
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+  padding-bottom: 3rem;
+  width: 80%;
+  margin: 0 auto;
+  max-width: 1450px;
+}
+.logo {
+  font-size: 1.35rem;
+  font-weight: 800;
+}
+.top p {
+  color: #b8c7dc;
+  font-size: 0.9rem;
+  margin-top: 0.7rem;
+}
+.columns {
+  display: flex;
+  gap: clamp(2rem, 7vw, 7rem);
+}
+.columns div {
+  display: grid;
+  align-content: start;
+  gap: 0.7rem;
+  min-width: 90px;
+}
+.columns h3 {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #8fa6c5;
+  margin-bottom: 0.35rem;
+}
+.columns a {
+  font-size: 0.9rem;
+  color: #dce6f3;
+}
+.bottom {
+  border-top: 1px solid #294160;
+  padding-top: 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  color: #8fa6c5;
+  font-size: 0.78rem;
+
+  width: 80%;
+  margin: 0 auto;
+  max-width: 1450px;
+}
+.bottom div {
+  display: flex;
+  gap: 1.25rem;
+}
+@media (max-width: 650px) {
+  .footer {
+    margin-left: -12.5%;
+    margin-right: -12.5%;
+    padding-left: 12.5%;
+    padding-right: 12.5%;
+  }
+  .top {
+    display: grid;
+  }
+  .columns {
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  .bottom {
+    display: grid;
+    gap: 1rem;
+  }
+  .bottom div {
+    gap: 1rem;
+  }
+}
